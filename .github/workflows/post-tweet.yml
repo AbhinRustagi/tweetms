@@ -1,0 +1,18 @@
+name: Post Scheduled Tweets
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/45 * * * *"
+jobs:
+  post-tweets:
+    runs-on: ubuntu-latest
+    environment: Default
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v3
+      - name: setup nodejs
+        uses: actions/setup-node@v3
+      - name: install npm dependencies
+        run: npm ci
+      - name: fetch & post tweets
+        run: node scripts/main.js
