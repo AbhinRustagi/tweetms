@@ -2,7 +2,7 @@ name: Post Scheduled Tweets
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/45 * * * *"
+    - cron: "05 */2 * * *"
 jobs:
   post-tweets:
     runs-on: ubuntu-latest
