@@ -1,12 +1,15 @@
-import { Card } from "@/components/Card";
-import React from "react";
+import { Card, Hero, Meta } from "@/components";
+import { cardDefaultProps } from "@/data";
 
 export default function Home() {
   return (
-    <main>
-      <p className="text-red-500">hello</p>
-      <Card />
-    </main>
+    <>
+      <Meta />
+      <main className="max-w-4xl lg:px-0 px-6 mx-auto py-6">
+        <Hero />
+        <Card {...cardDefaultProps} />
+      </main>
+    </>
   );
 }
 
